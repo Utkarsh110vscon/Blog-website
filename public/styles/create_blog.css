@@ -1,0 +1,165 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+:root{
+    --primary-darkgrey:#4b4a4a;
+    --primary-darkwhite:#f7f7f7;
+    --primary-clr2:rgb(241 241 241);
+    --primary-clr3:#b388ff;
+    --primary-clr4:rgba(255, 255, 255, 0.1);
+}
+
+.header{
+    background-color: var(--primary-clr2);
+    padding: 1rem 0.5rem;
+}
+
+.nav-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.nav{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+
+.title{
+    text-transform: uppercase;
+    font-family: "Albert Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 1px;    
+}
+
+.text-clr{
+    color: var(--primary-darkgrey);
+}
+
+.nav-items{
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-family: "Albert Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    height: fit-content;
+}
+
+.form-contanier{
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+}
+
+.left-form{
+    width: 50%;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.editable{
+    outline: none;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-family: sans-serif;    
+}
+
+.placeholder_title{
+    opacity: 0.25;
+    opacity: 0.25;
+}
+
+.editable-para{
+    font-size: 1rem;
+    font-family: sans-serif;
+    outline: none;
+}
+
+.placeholder_content{
+    opacity: 0.25;
+}
+
+.right-form{
+    width: 18%;
+    height: 485px;
+    display: grid;
+    grid-template-rows: repeat(24,1fr);
+    position: relative;
+    padding: 0.5rem;
+}
+
+.form_text-heading{
+    grid-row: 1/2;
+    font-weight: 200;
+    color: var(--primary-darkgrey);
+    font-family: sans-serif;
+    border-bottom:1px solid rgb(196, 194, 194) ;
+}
+
+label[for]{
+    font-size: 0.9rem;
+    font-family: sans-serif;
+}
+
+label[for="author"]{
+    grid-row: 3/4;
+}
+#author{
+ grid-row: 4/6;
+ border: 1px solid var(--primary-darkgrey);
+ border-radius: 2.5px;
+ outline: none;
+ font-size: 1rem;
+}
+
+label[for="time"]{
+    grid-row: 7/8;
+}
+#time{
+    grid-row: 8/10;
+    border: 1px solid var(--primary-darkgrey);
+    border-radius: 2.5px;
+    outline: none;
+    font-size: 1rem;
+}
+
+label[for="tag"]{
+    grid-row: 11/12;
+}
+#tag{
+    grid-row: 12/14;
+    border: 1px solid var(--primary-darkgrey);
+    border-radius: 2.5px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.submit-btn{
+    width: 5rem;
+    padding: 0.5rem 0;
+    grid-row: 16/17;
+    font-size: 1rem; 
+    color: #ffffff63;
+    border: #006fad;
+    background-color: #006fad;
+}

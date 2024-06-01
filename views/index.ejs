@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Web-App</title>
+
+    <!-- font-awesome css file for icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Albert Sans Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Open Sans Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
+
+    <!-- Noto Serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- external css -->
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+<body>
+    <div class="Header">
+
+        <!-- left transparent circle -->
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+        <div class="circle circle4"></div>
+
+        <!-- middle transparent circle -->
+        <div class="circle circle5"></div>
+        <div class="circle circle6"></div>
+        <div class="circle circle7"></div>
+
+        <!-- right transparent circle -->
+        <div class="circle circle8"></div>
+        <div class="circle circle9"></div>
+        <div class="circle circle1a"></div>
+        <div class="circle circle1b"></div>
+        
+
+
+        <div class="nav-content">
+            <ul class="left-section nav">
+                <li class="title"><a class="text-clr" href="/">blogwrite</a></li>
+                <li class="nav-items"><a class="text-clr" href="/">home</a></li>
+                <li class="nav-items"><a class="text-clr" href="/blogs">blogs</a></li>
+            </ul>
+    
+            <ul class="right-section nav">
+                <li><a href="https://www.linkedin.com/in/utkarsh-kumar-a78a38253/" target="_blank"><i class="fa fa-linkedin-square text-clr"></i></a></li>
+                <li><a href="https://twitter.com/uktech62071" target="_blank"><i class="fa fa-twitter-square text-clr"></i></a></li>
+                <li><a href="https://github.com/Utkarsh110vscon" target="_blank"><i class="fa fa-github text-clr"></i></a></li>
+                <li><a href="/createBlog"><i class='fas fa-edit text-clr'></i> <span class="nav-items text-clr">create blog</span></a></li>
+                <li class="nav-items"><div class="setting_btn"><i class="fa fa-gear text-clr"></i> <span class="text-clr">Setting</span> </div></li>
+            </ul>
+        </div>
+
+        <div class="setting-bar">
+            <span class="nav-items">clear-all</span>
+        </div>
+
+        <div class="welcome">
+            <h2 class="text-clr">welcome to my website</h2>
+        </div>
+        <div class="info">
+            <h2 class="text-clr">Read and Write your favourite articles</h2>
+        </div>
+    </div>
+
+    <div class="genre">
+        <div class="genre-content">
+            <div class="photography genre-items">
+                <a href="/assets/images/lifestyle.jpg">photography</a>
+            </div>
+            <div class="anime genre-items">
+                <a href="/assets/images/anime.jpg">animation</a>
+            </div>
+            <div class="traveling genre-items">
+                <a href="/assets/images/travel.jpg">traveling</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="promt_section">
+        <form id="passwordForm" class="prompt_form">
+            <h2>enter the password</h2>
+            <input type="password" name="encryptionKey" id="passwordField" style="height: 2rem; width: 100%; display: block; border-radius: 3px;">
+            <div class="form_btn">
+                <button type="submit" class="promt_btn">submit</button>
+                <span class="promt_btn cancel_btn">cancel</span>
+            </div>
+        </form>
+    </div>  
+    
+    <div id="customAlert">
+        <p id="alertMessage"></p>
+        <button id="alertButton">OK</button>
+    </div>
+
+    <div class="post">
+        <% post.forEach(element => { %>
+            <div class="blg-posts fadeAndShow hide">
+                <h1 class="post-title">
+                    <%= element.title %>
+                </h1>
+                <small class="small post-date">
+                    <%= element.date %>
+                </small>
+                <p class="post-content">
+                    <%= element.content %>
+                </p>
+                <small class="small post-author">
+                    by:<%= element.author %>
+                </small>
+                <hr style="opacity: 30%;">
+            </div>
+        <% }); %>
+    </div>
+
+    <div class="container fadeAndShow hide">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+            <div class="col-md-4 offset-md-1 mb-3">
+                <form id="email_form">
+                    <h5>Subscribe to our newsletter</h5>
+                    <p>Monthly digest of what's new and exciting from us.</p>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                        <label for="newsletter1" class="visually-hidden">Email address</label>
+                        <input id="newsletter1" name="emailOfClient" type="text" class="form-control" placeholder="Email address">
+                        <button class="btn btn-primary email_btn" type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+      
+            <div class="col mb-3">
+      
+            </div>
+      
+            <div class="col-6 col-md-2 mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+      
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+          
+        </footer>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const options = {
+            threshold: 0.1
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, options);
+
+        const elements = document.querySelectorAll(".fadeAndShow");
+
+        elements.forEach((section) => {
+         observer.observe(section);
+        });
+    });
+
+    const btn= document.querySelector(".setting_btn");
+    const menu= document.querySelector(".setting-bar");
+    const promptField= document.querySelector(".promt_section");
+    const cancelBtn=document.querySelector(".cancel_btn");
+    const inputField=document.querySelector("#passwordField");
+
+    const emailForm=document.querySelector("#email_form");
+    const email=document.getElementById("newsletter1");
+    const emailBtn=document.querySelector(".email_btn");
+
+
+    btn.addEventListener("click", () => {
+        if(menu.classList.length === 1){
+            menu.classList.add("setting-animation");
+        }else{
+            menu.classList.remove("setting-animation");
+        }
+    }); 
+
+    let value;
+    menu.addEventListener("click", () => {
+        if(menu.classList.length > 1){
+            menu.classList.remove("setting-animation");
+        }
+        showCard();
+    })
+
+    cancelBtn.addEventListener("click", () => {
+        hideCard();
+    })
+
+
+    function showCard() {
+        document.getElementById('overlay').style.display = 'block';
+        promptField.style.display = 'block';
+    }
+
+    function hideCard() {
+        document.getElementById('overlay').style.display = 'none';
+        promptField.style.display = 'none';
+        inputField.value="";
+    }
+
+    document.getElementById('passwordForm').addEventListener("submit", async(event) => {
+        event.preventDefault();
+
+        const form= event.target;
+        const formData= new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try{
+            const response= await fetch("http://localhost:3000/admin", {
+                method: "post",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data), 
+            });
+            console.log(response);
+
+            if(response.redirected) {
+                window.location.href= response.url;
+            } else {
+                const result = await response.json();
+                hideCard();
+                showCustomAlert(result.message);
+            }
+        }catch(err) {
+            console.log(err);
+        }
+    });
+
+    function showCustomAlert(message) {
+        const customAlert = document.getElementById('customAlert');
+        const alertMessage = document.getElementById('alertMessage');
+        const alertButton = document.getElementById('alertButton');
+            
+        alertMessage.textContent = message;
+        customAlert.style.display = 'block';
+            
+        alertButton.addEventListener('click', () => {
+            customAlert.style.display = 'none';
+        });
+    }
+
+    emailForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        
+        const form= event.target;
+        console.log(form)
+        const formData= new FormData(form);
+        console.log(formData)
+        const data= Object.fromEntries(formData.entries());
+        console.log(data);
+
+        try{
+            const response= await fetch("http://localhost:3000/emailSend", {
+                method: "post",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            });
+
+            console.log(response);
+            if(response.ok){
+                if(response.redirected) {
+                    window.location.href= response.url;
+                } else {
+                    const result = await response.json();
+                    console.log(result);
+                }
+            }else{
+                throw new Error("error in making fetch api request");
+            }
+                      
+        }catch(err){
+            console.log(err);
+        }
+    })
+
+    </script>
+
+</body>
+</html>

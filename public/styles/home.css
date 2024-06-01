@@ -1,0 +1,369 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+:root{
+    --primary-clr1:#ffffff;
+    --primary-clr2:#6d09f8;
+    --primary-clr3:#b388ff;
+    --primary-clr4:rgba(255, 255, 255, 0.1);
+    --primary-clr5:rgb(241 241 241)
+}
+
+.Header{
+    text-align: center;
+    padding: 1.5rem;
+    height: 375px;
+    background: linear-gradient(to bottom right, var(--primary-clr2) 20%, var(--primary-clr3));
+    background-size: cover;
+    position: relative;
+}
+
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--primary-clr4);
+}
+
+.circle1 {
+    width: 100px;
+    height: 100px;
+    top: -10%;
+    left: -2%;
+}
+
+.circle2 {
+    width: 175px;
+    height: 175px;
+    bottom: 10%;
+    left: 15%;
+}
+
+.circle3 {
+    width: 100px;
+    height: 100px;
+    top: 30%;
+    left: 2.5%;
+}
+
+.circle4 {
+    width: 100px;
+    height: 100px;
+    bottom: 2.5%;
+    left: 2.5%;
+}
+
+.circle5 {
+    width: 70px;
+    height: 70px;
+    bottom: 15%;
+    right: 35%;
+}
+
+.circle6 {
+    width: 75px;
+    height: 75px;
+    bottom: 30%;
+    right: 25%;
+}
+
+.circle7 {
+    width: 55px;
+    height: 55px;
+    bottom: 20%;
+    right: 20%;
+}
+
+.circle8 {
+    width: 125px;
+    height: 125px;
+    top: 30%;
+    right: 0%;
+}
+
+.circle9 {
+    width: 75px;
+    height: 75px;
+    top: 20%;
+    right: 0%;
+}
+
+.circle1a {
+    width: 25px;
+    height: 25px;
+    top: 5%;
+    right: 0%;
+}
+
+.circle1b {
+    width: 50px;
+    height: 50px;
+    top: 0%;
+    right: 0%;
+}
+
+.nav-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
+    max-width: 80%;
+    margin: 0 auto 1.5rem;
+}
+
+.nav{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+
+.setting_btn{
+    cursor: pointer;
+}
+
+.setting-bar{
+    width: 11rem;
+    background-color: var(--primary-clr5);
+    position: absolute;
+    z-index: 50;
+    right: 6.5%;
+    top: 14.5%;
+    display: none;
+    transition: all 1s;
+}
+
+.setting-bar:hover{
+    background-color: var(--primary-clr3);
+    color: var(--primary-clr1);
+}
+
+.setting-animation{
+    display: block;
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1;
+}
+
+.promt_section{
+    background-color: #222831;
+    border-radius: 4px;
+    color: var(--primary-clr1);
+    width: 30rem;
+    height: 11rem;
+    padding: 1rem;
+    position: relative;
+    top: -550px;
+    left: 35%;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.45);
+    display: none; 
+}
+
+.prompt_form{
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   text-transform: capitalize;
+   
+}
+
+.form_btn{
+    align-self:self-end;
+    display: flex;
+    align-items: center;
+}
+
+.cancel_btn{
+    background-color: var(--primary-clr1);
+    color: black;
+    display: inline-block;
+    text-align:center;
+    padding-top: 2px;
+    cursor: pointer;
+}
+
+.promt_btn{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 3px;
+    text-transform: capitalize;
+    border: none;
+    margin-left: 0.35rem;
+}
+.prompt_form h2{
+    margin-bottom: 0;
+}
+
+#customAlert {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 35%;
+    width: 25rem;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+#customAlert button {
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 0 0.75rem;
+}
+
+.title{
+    text-transform: uppercase;
+    font-family: "Albert Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 1px;   
+}
+
+.text-clr{
+    color: var(--primary-clr1);
+}
+
+.nav-items{
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-family: "Albert Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    height: fit-content;
+}
+
+.welcome{
+    font-size: 1.7rem;
+    font-family: "Open Sans", sans-serif;
+    width: 45%;
+    margin: 0 auto 1.5rem;
+}
+
+.info{
+    font-family: "Open Sans", sans-serif;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.genre-content{
+    width: 70%;
+    height: 175px;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem auto;
+}
+
+.genre-items{
+    width: 30%;
+    height: 100%;
+    background-color:  #6d09f8;
+    position: relative;
+}
+
+.genre-items::before{
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0,0.25);
+}
+
+.genre-items a{
+    color: var(--primary-clr1);
+    position: relative;
+    top: 75%;
+    font-size: 1.25rem;
+    font-family: "Noto Serif", serif;
+    font-weight: 400;
+}
+
+.photography a{
+    left: 25%;
+    
+}
+.anime a{
+    left: 30%;
+}
+.traveling a{
+    left: 35%;
+}
+
+.photography{
+    background-image: url(../assets/images/lifestyle.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.anime{
+    background-image: url(../assets/images/anime.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.traveling{
+    background-image: url(../assets/images/travel.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.post{
+    padding-top: 3.5rem;
+}
+
+.blg-posts{
+    width: 75%;
+    height: 220px;
+    margin:0 auto 2rem;
+    text-align: justify;
+    /* border: 1px solid #b388ff; */
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    overflow: hidden;
+}
+
+.small{
+    font-size: 1.2rem;
+    opacity: 60%;
+}
+
+.post-content{
+    font-size: 1.20rem;
+}
+
+.hide{
+    opacity: 0;
+    transform: translateY(50%);
+    transition: all 1s;
+}
+
+.show{
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s;
+}
